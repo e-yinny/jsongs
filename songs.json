@@ -1,0 +1,62 @@
+[
+    {
+        "title": "Skinny Love",
+        "artist": "Birdy",
+        "genre": "Indie",
+        "year": 2011
+    },
+    {
+        "title": "Yellow",
+        "artist": "Coldplay",
+        "genre": "Indie",
+        "year": 2000
+    },
+    {
+        "title": "Dance Wiv Me",
+        "artist": "Dizzee Rascal",
+        "genre": "Hip Hop",
+        "year": 2008
+    },
+    {
+        "title": "Stay",
+        "artist": "Rihanna",
+        "genre": "Pop",
+        "year": 2012
+    },
+    {
+        "title": "I Lived",
+        "artist": "One Republic",
+        "genre": "Pop",
+        "year": 2013
+    },
+    {
+        "title": "Weekend",
+        "artist": "Mac Miller",
+        "genre": "Hip Hop",
+        "year": 2015
+    },
+    {
+        "title": "Be Kind",
+        "artist": "Halsey",
+        "genre": "Indie",
+        "year": 2020
+    },
+    {
+        "title": "Can you Feel the Love Tonight",
+        "artist": "Elton John",
+        "genre": "Rock",
+        "year": 1994
+    },
+    {
+        "title": "Good Life",
+        "artist": "G-Eazy",
+        "genre": "Hip Hop",
+        "year": 2013
+    },
+    {
+        "title": "Alone Together",
+        "artist": "Linkin Park",
+        "genre": "Rock",
+        "year": 2011
+    }
+]
