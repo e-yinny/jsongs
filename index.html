@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <!-- Raw String Display -->
+    <div class="raw"></div>
+    <br><br>
+
+    <!-- Nice Displayed Table -->
+    <table class="nice">
+        <tr>
+            <th>Song Title</th>
+            <th>Artist</th>
+            <th>Genre</th>
+            <th>Released</th>
+        </tr>
+    
+        <tbody id="myTable"></tbody>
+    </table>
+    <br><br>
+
+    <!-- Form for choosing Genre -->
+    <form>
+        <label for="genre">Choose A Genre</label>
+        <select name="genre" id="genre">
+            <option value="Indie">Indie</option>
+            <option value="Hip Hop">Hip Hop</option>
+            <option value="Pop">Pop</option>
+            <option value="Rock">Rock</option>
+        </select>
+        <input type = "button" value = "Filter" onclick = "filterGenre()" class = "button">
+    </form>
+    <!-- Filtered out songs -->
+    <div id="filtsongs"></div>
+
+
+    <script lang="javascript">
+        // Raw Display
+        $.get("https://e-yinny.github.io/jsongs/songs.json",
+        function(data) {
+            theString = JSON.stringify(data);
+            parsedStr = JSON.parse(theString);
+            $(".raw").html(theString);
+
+            buildTable(data)
+
+            // Display Nice Table
+            function buildTable(data) {
+                var table = document.getElementById('myTable')
+                for(var i = 0; i < data.length; i++) {
+                    var row = `<tr>
+                                    <td>${data[i].title}</td>
+                                    <td>${data[i].artist}</td>
+                                    <td>${data[i].genre}</td>
+                                    <td>${data[i].year}</td>
+                                </tr>`
+                    table.innerHTML += row
+                }
+
+            }
+        })
+        
+        function filterGenre(){
+            var index = document.getElementById("genre").selectedIndex;
+            var val = document.getElementById("genre").options[index].value;
+            var filteredSongs = "Filtered Songs: " + "<br/>";
+
+            for (var i = 0; i < 10; i++){
+                if (val == parsedStr[i].genre) {
+                filteredSongs = filteredSongs + parsedStr[i].title + "<br/>";
+                }
+            }
+            document.getElementById("filtsongs").innerHTML = filteredSongs;
+        } 
+    </script>
+    
+    
+</body>
+</html> 
